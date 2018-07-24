@@ -3,8 +3,7 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom
 import {HeaderComponent} from "./base/HeaderComponent";
 import {MusicContainer} from "../containers/songs/MusicContainer";
 import {ListPreviousMusicContainer} from "../containers/songs/ListPreviousMusicContainer";
-
-
+import {config} from "../utils/config";
 
 export class AppComponent extends React.Component {
     componentDidMount() {
@@ -13,11 +12,11 @@ export class AppComponent extends React.Component {
 
     render() {
         const routes = [{
-            path: '/',
+            path: config.basePath + '',
             exact: true,
             component: () => <MusicContainer />
         }, {
-            path: '/tocadas',
+            path: config.basePath + '/tocadas',
             exact: true,
             component: () => <ListPreviousMusicContainer />
         }];
