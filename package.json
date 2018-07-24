@@ -1,7 +1,7 @@
 {
-  "name": "karaoke-queue-react-firebase/",
+  "name": "karaoke-queue-react-firebase",
   "version": "0.1.0",
-  "homepage": "https://fernandoteruo.github.io/karaoke-queue-react-firebase/",
+  "homepage": "https://fernandoteruo.github.io/karaoke-queue-react-firebase",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
