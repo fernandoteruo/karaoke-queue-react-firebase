@@ -12,7 +12,7 @@ export class AppComponent extends React.Component {
 
     render() {
         const routes = [{
-            path: config.basePath + '',
+            path: config.basePath + '/',
             exact: true,
             component: () => <MusicContainer />
         }, {
