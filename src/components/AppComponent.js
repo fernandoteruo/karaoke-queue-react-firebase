@@ -31,7 +31,7 @@ export class AppComponent extends React.Component {
                                 {routes.map((route, index) => (
                                     <Route key={index} path={route.path} render={route.component} exact={route.exact}/>
                                 ))}
-                                <Redirect to='/'/>
+                                <Redirect to='/404'/>
                             </Switch>
                         </main>
                     </div>
