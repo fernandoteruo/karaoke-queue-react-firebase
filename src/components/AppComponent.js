@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom
 import {HeaderComponent} from "./base/HeaderComponent";
 import {MusicContainer} from "../containers/songs/MusicContainer";
 import {ListPreviousMusicContainer} from "../containers/songs/ListPreviousMusicContainer";
-import {config} from "../utils/config";
 
 export class AppComponent extends React.Component {
     componentDidMount() {
@@ -12,17 +11,17 @@ export class AppComponent extends React.Component {
 
     render() {
         const routes = [{
-            path: config.basePath + '/',
+            path: '/',
             exact: true,
             component: () => <MusicContainer />
         }, {
-            path: config.basePath + '/tocadas',
+            path: '/tocadas',
             exact: true,
             component: () => <ListPreviousMusicContainer />
         }];
         return (
             <div className="app">
-                <Router>
+                <Router basename={process.env.PUBLIC_URL}>
                     <div>
                         <HeaderComponent />
                         <main className="view">
