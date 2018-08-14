@@ -1,8 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import {HeaderComponent} from "./base/HeaderComponent";
-import {MusicContainer} from "../containers/songs/MusicContainer";
-import {ListPreviousMusicContainer} from "../containers/songs/ListPreviousMusicContainer";
+import {HomeContainer} from "../containers/songs/HomeContainer";
+import {ListPreviousSongsContainer} from "../containers/songs/ListPreviousSongsContainer";
+import {AdminContainer} from "../containers/admin/AdminContainer";
 
 export class AppComponent extends React.Component {
     componentDidMount() {
@@ -13,17 +14,21 @@ export class AppComponent extends React.Component {
         const routes = [{
             path: '/',
             exact: true,
-            component: () => <MusicContainer />
+            component: () => <HomeContainer/>
         }, {
             path: '/tocadas',
             exact: true,
-            component: () => <ListPreviousMusicContainer />
+            component: () => <ListPreviousSongsContainer/>
+        }, {
+            path: '/admin',
+            exact: true,
+            component: () => <AdminContainer/>
         }];
         return (
             <div className="app">
                 <Router basename={process.env.PUBLIC_URL}>
                     <div>
-                        <HeaderComponent />
+                        <HeaderComponent/>
                         <main className="view">
                             <Switch>
                                 {routes.map((route, index) => (

@@ -5,10 +5,11 @@ const initialState = {
     artist: "",
     music: "",
     code: "",
-    songs: []
+    songs: [],
+    filter: ""
 };
 
-export default function MusicReducer(state = initialState, action) {
+export default function SongsReducer(state = initialState, action) {
     switch (action.type) {
         case ActionsType.setValue:
             return Object.assign({}, state, {[action.param]: action.value});
@@ -18,10 +19,16 @@ export default function MusicReducer(state = initialState, action) {
                 artist: '',
                 music: '',
                 code: '',
+                filter: state.filter
             });
         case ActionsType.listMusic:
             return Object.assign({}, state, {
-               songs: action.songs
+                filter: state.filter,
+                songs: action.songs
+            });
+        case ActionsType.setFilter:
+            return Object.assign({}, state, {
+                filter: action.filter
             });
         default:
             return Object.assign({}, state);

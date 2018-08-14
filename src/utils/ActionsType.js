@@ -1,6 +1,7 @@
 export const ActionsType = {
-    setValue: "SET_VALUE_MUSIC",
-    submitMusic: "SUBMIT_VALUES_MUSIC",
-    listMusic: "LIST_VALUES_MUSIC",
-    updateMusic: "UPDATE_MUSIC"
+    setValue: "SET_VALUE_SONG",
+    submitMusic: "SUBMIT_VALUES_SONG",
+    listMusic: "LIST_VALUES_SONG",
+    updateMusic: "UPDATE_SONG",
+    setFilter: "SET_FILTER_SONG"
 };

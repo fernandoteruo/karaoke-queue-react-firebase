@@ -1,4 +1,6 @@
 import {ActionsType} from "../utils/ActionsType";
+import {SongStatus} from "../utils/SongStatus";
+
 import firebase from "firebase";
 export const setValue = (param, value) => ({
     type: ActionsType.setValue,
@@ -12,7 +14,7 @@ export const submitSong = (name, artist, music, code) => {
         name: name || '',
         music: music || '',
         code: code || '',
-        status: 'new'
+        status: SongStatus.notPlayed
     });
     return {
         type: ActionsType.submitMusic
@@ -49,12 +51,18 @@ export const updateSong = (songs) => async dispatch => {
     for (let i in songs) {
         let id = songs[i].id;
         delete songs[i].id;
-        updates['/songs/' + id] = songs[i];
+        updates['/songs/' + id] = songs[i].status ? songs[i] : null;
     }
+    console.log(updates);
     await firebase.database().ref().update(updates);
     dispatch(update())
 };
 
 export const update = () => ({
     type: ActionsType.updateMusic
+});
+
+export const setFilter = (filter) => ({
+    type: ActionsType.setFilter,
+    filter: filter
 });

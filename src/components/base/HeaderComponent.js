@@ -12,7 +12,7 @@ export const HeaderComponent = () => (
                 <Link to='/'>Fila Músicas</Link>
             </Button>
             <Button>
-                <Link to='/tocadas'>Anteriores</Link>
+                <Link to='/tocadas'>Tocadas</Link>
             </Button>
         </Toolbar>
     </AppBar>

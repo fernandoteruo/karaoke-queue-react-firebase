@@ -1,13 +1,13 @@
 import {connect} from 'react-redux';
-import {AddMusicComponent} from "../../components/songs/AddMusicComponent";
-import {setValue, submitSong} from "../../actions/MusicActions";
+import {AddSongComponent} from "../../components/songs/AddSongComponent";
+import {setValue, submitSong} from "../../actions/SongsActions";
 
 const mapStateToProps = (state, props) => {
     return {
-        name: state.MusicReducer.name,
-        music: state.MusicReducer.music,
-        artist: state.MusicReducer.artist,
-        code: state.MusicReducer.code
+        name: state.SongsReducer.name,
+        music: state.SongsReducer.music,
+        artist: state.SongsReducer.artist,
+        code: state.SongsReducer.code
     }
 };
 const mapDispatchToProps = (dispatch, props) => {
@@ -22,4 +22,4 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 };
 
-export const AddMusicContainer = connect(mapStateToProps, mapDispatchToProps)(AddMusicComponent);
+export const AddSongContainer = connect(mapStateToProps, mapDispatchToProps)(AddSongComponent);

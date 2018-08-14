@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {MusicComponent} from "../../components/songs/MusicComponent";
+import {HomeComponent} from "../../components/songs/HomeComponent";
 
 const mapStateToProps = (state, props) => {
     return {
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 };
 
-export const MusicContainer = connect(mapStateToProps, mapDispatchToProps)(MusicComponent);
+export const HomeContainer = connect(mapStateToProps, mapDispatchToProps)(HomeComponent);

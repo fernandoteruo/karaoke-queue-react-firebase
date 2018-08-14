@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {AppComponent} from "../components/AppComponent";
-import {readMusic} from "../actions/MusicActions";
+import {readMusic} from "../actions/SongsActions";
 import firebase from "firebase";
 
 const mapStateToProps = (state, props) => {

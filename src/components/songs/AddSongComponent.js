@@ -3,9 +3,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import SendIcon from "@material-ui/icons/Send"
 import Grid from '@material-ui/core/Grid';
-import "./AddMusicComponent.css";
+import "./AddSongComponent.css";
 
-export const AddMusicComponent = ({name, music, artist, code, handleChange, handleSubmit}) => (
+export const AddSongComponent = ({name, music, artist, code, handleChange, handleSubmit}) => (
     <form noValidate action="" onSubmit={e => handleSubmit(e, name, artist, music, code)}>
         <Grid container>
             <Grid item xs={12} sm={6} md={4}>
